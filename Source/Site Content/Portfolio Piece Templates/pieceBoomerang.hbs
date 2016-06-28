@@ -1,0 +1,35 @@
+
+<div class="content-row">
+
+    <div class="content-block">
+        <img src="/content/images/boomerang-preview.png"/>
+    </div>
+
+    <div class="content-block">
+        <p><strong>Project Boomerang</strong> is a Work-in-Progress Side-Scroller Metroidvania that I've been working on between other projects. It's a long term project that I don't expect to have done for another year or two.</p>
+        <p>I started building the engine to support easy content generation, and a soft goal is to release the engine on the Unity Asset Store. My end-goal is to have an engine that another developer can use without having to write too much of their own code. For example, the map generation process is entirely built out of XML and given proper file names, the engine can load various configuration and data files to render a map with multiple layers, camera controls, sprites, collisions, tile properties, and parallaxing backrounds.</p>
+        <p>The physics engine uses raycasting, and sprite controllers use state machine objects. A developer could write a new state object (or download one that another developer created) and simply attach it to the character controller instance. Each state can access properties of the character controller, such as movement speed, and affect the outcome of the state. The character controller then gets the updated properties from the state and applies them, allowing developers to write primarily input functionality and allow things like collision, gravity, and animations to be taken care of by the controller for them. Cameras work similarly, using states to dictate behaviors such as follow-the-player, autoscroll, and fixed placement.</p>
+    </div>
+</div>
+
+<div class="content-row">
+    <div class="content-block">
+        <p>There is a lot of work still to be done on the engine and lots of features are planned, such as:</p>
+        <ul>
+            <li>Easy to implement weapons. The developer can set them to be ranged or melee, and choose the melee or projectile type (overhead swing, straight forward attack, cone attack, homing missile, spread shot, etc)</li>
+            <li>Background generation with parallaxing</li>
+            <li>Various camera controls</li>
+            <li>An AI state/trigger machine for enemies</li>
+            <li>Pick up items</li>
+            <li>Player Stats and Inventory</li>
+            <li>Refactoring the BaseController class to allow it to be used for item pick ups, enemies, or whatever else</li>
+            <li>Event Triggers</li>
+            <li>A Cutscene Engine</li>
+            <li>A Path Engine that can be used by cameras, platforms, and other sprites</li>
+            <li>A configurable Input Manager</li>
+        </ul>
+    </div>
+    <div class="content-block">
+        <p>The current Unity project files can be <a data-external-link="true" href="/content/downloads/Boomerang.zip">downloaded directly</a> or from <a data-external-link="true" href="https://github.com/Garmichael/Project-Boomerang">my GitHub</a></p>
+    </div>
+</div>

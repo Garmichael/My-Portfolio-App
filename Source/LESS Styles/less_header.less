@@ -1,0 +1,86 @@
+body{
+
+    > header{
+        .depth-2;
+        display: none;
+        height: 100%;
+        width: 250px;
+        background-color: @background;
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        section#about-me{
+            color: @background;
+            background-color: @primary;
+            border-top: @primaryDark 20px solid;
+            z-index: 100;
+            padding: 40px 20px 20px 20px;
+
+            h1{
+                margin-bottom: 10px;
+            }
+
+            h2{
+                margin-left: 10px;
+
+                &:last-of-type{
+                    margin-bottom: 20px;
+                }
+            }
+
+            ul{
+                margin: 0 -20px -20px -20px;
+
+                a{
+                    display: block;
+                    color: @background;
+                    padding: 20px;
+                    background: linear-gradient(to right,  @primaryLight 50%, @accent 50%);
+                    background-size: 200% 100%;
+                    transition: background-position 0.1s;
+                    transition-timing-function: ease-in;
+
+                    &:hover, &:focus{
+                        background-position: -100% 0;
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        nav{
+            padding: 40px 20px 20px 20px;
+
+            ul{
+                li{
+                    .font-size-large;
+                    margin-bottom: 20px;
+
+                    a{
+                        display: block;
+                        padding: 20px;
+                        border-radius: 5px;
+                        transition: all 0.2s;
+                        color: @primary;
+
+                        &.selected, &:hover, &:focus{
+                            .depth-3;
+                            background-color: @primary;
+                            color: @background;
+                            outline: none;
+                        }
+                    }
+
+                    .fa{
+                        .font-size-largest;
+                        margin-right: 20px;
+                        vertical-align: middle;
+                    }
+
+                }
+            }
+        }
+    }
+}
