@@ -9,10 +9,12 @@ define('pageNavView', ['backbone', 'templates', 'siteContentCollection'], functi
         },
 
         render: function(){
-            var pageModel = this.collection.findWhere({isSelected: true}).get('pieces');
+            var pageModel = this.collection.findWhere({isSelected: true}) || this.collection.at(0);
 
-            this.setElement('ul.menu');
-            this.$el.html(this.template({pieces: pageModel.toJSON()}));
+            if(pageModel !== undefined){
+                this.setElement('ul.menu');
+                this.$el.html(this.template({pieces: pageModel.get('pieces').toJSON()}));
+            }
         }
 
     });

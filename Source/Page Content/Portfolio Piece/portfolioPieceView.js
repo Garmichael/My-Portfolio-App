@@ -24,8 +24,6 @@ define('portfolioPieceView', ['backbone', 'jquery', 'templates', 'siteContentCol
             if(pieceModel !== undefined){
                 self.setElement('article');
 
-                console.log(preventTransition);
-
                 if(preventTransition){
                     self.$el.html(self.template(pieceModel.toJSON()));
                     self.loadYoutubeThumbs();

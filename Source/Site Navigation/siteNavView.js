@@ -11,8 +11,8 @@ define('siteNavView',
             },
 
             initialize: function(){
-                this.listenTo(this.collection, 'change add', this.render);
-                this.listenTo(routerModel, 'change', this.render);
+                this.render();
+                this.listenTo(this.collection, 'newSelected:category', this.render);
             },
 
             render: function(){

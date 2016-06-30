@@ -7,6 +7,8 @@ define('siteContentCollection',
 
             initialize: function(){
                 this.addContent();
+                this.selectItem();
+
                 this.listenTo(routerModel, 'change', this.selectItem);
             },
 
@@ -113,7 +115,6 @@ define('siteContentCollection',
                     title: 'Resume',
                     pieces: new Backbone.Collection()
                 });
-
             }
         });
 

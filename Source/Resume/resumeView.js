@@ -1,6 +1,6 @@
 define('resumeView',
-    ['backbone', 'jquery', 'templates', 'routerModel'],
-    function(Backbone, $, templates, routerModel){
+    ['backbone', 'jquery', 'templates', 'siteContentCollection'],
+    function(Backbone, $, templates, siteContentCollection){
 
         var view = Backbone.View.extend({
             template: templates.resume,
@@ -10,17 +10,19 @@ define('resumeView',
 
                 self.setElement('main');
 
-                self.listenTo(routerModel, 'change', function() {
-                    if(routerModel.get('page') === 'Resume') {
-                        self.render();
-                    }
-                });
+                self.render();
+                self.listenTo(siteContentCollection, 'newSelected:category', self.render);
             },
 
             render: function(){
-                var self = this;
+                var self = this,
+                    pageModel = siteContentCollection.findWhere({isSelected: true});
 
-                this.$el.fadeOut('fast', function () {
+                if(pageModel === undefined || pageModel.get('title') !== 'Resume'){
+                    return;
+                }
+
+                self.$el.fadeOut('fast', function () {
                     self.$el.html(self.template()).fadeIn('fast');
                 });
 
